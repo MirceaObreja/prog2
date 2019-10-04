@@ -45,4 +45,4 @@ Ich will einen Kalorienrechner erstellen bei welchem man eingeben kann ob man ab
 
 ##### **Ablaufdiagramm**
 
- ![Ablaufdiagramm](D:\Mircea\Documents\Schule\HTW\3. Semester\PROG\projekt\demos\Kalorienrechner.jpg)
+ ![Ablaufdiagramm](MirceaObreja/prog2/demos/Kalorienrechner.jpg)
