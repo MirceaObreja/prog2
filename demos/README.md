@@ -43,10 +43,10 @@ Ich will einen Kalorienrechner erstellen bei welchem man eingeben kann ob man ab
   - Mit den eingegebenen Daten können die Bedarfskalorien des Users berechnet werden
   - Mit den eingegebenen Daten kann das Programm Produkte aus dem Shop dem User vorschlagen
 
-##### **Ablaufdiagramm Variante 1**
+### **Ablaufdiagramm Variante 1**
 
  ![Ablaufdiagramm](Kalorienrechner.jpg)
 
-##### **Ablaufdiagramm Variante 2**
+### **Ablaufdiagramm Variante 2**
 
  ![Ablaufdiagramm2](Kalorienrechner2.jpg)
