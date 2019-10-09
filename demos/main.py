@@ -4,7 +4,7 @@ from flask import request
 
 app = Flask("Demo")
 
-@app.route("/hello/", methods=['GET', 'POST'])
+@app.route("/kalorienrechner/", methods=['GET', 'POST'])
 def hallo():
 	if request.method == 'POST':
 		ziel_person = request.form['vorname']
