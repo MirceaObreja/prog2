@@ -3,7 +3,14 @@
 <h3>Mein Kalorienrechner hilft dir deinen Tagesbedarf an Kalorien genau zu berechen. <br><br> Zudem kannst du auswählen ob du Gewicht verlieren, halten oder aufbauen möchtest. Zusätzlich werden dir die richtigen Produkte vorgeschlagen, welche dich bei deiner Zielsetzung unterstützen werden.</h3>
 
 <form method="POST">
-<h3>Alter</h3>
+
+<h3>Geschlecht:</h3>
+<form action="">
+  	<input type="radio" name="geschlecht" value="m"> Männlich<br>
+ 	<input type="radio" name="geschlecht" value="f"> Weiblich<br>
+</form>
+
+<h3>Alter:</h3>
 	<input type="number" name="alter" min=”1″ max=”100″ placeholder="Bitte gib dein Alter ein">
 
 <h3>Grösse in cm:</h3>
@@ -29,9 +36,9 @@
 		Bitte auswählen:
 
 			<select>
-			  <option value="2_1">vorwiegend liegend, z.B. Krankenhaus</option>
-			  <option value="2_2">vorwiegend sitzend, z.B. Bürojob</option>
-			  <option value="2_3">Mix aus sitzend / stehend, 
+			  <option value="2_1">Abnehmen</option>
+			  <option value="2_2">Gewicht halten</option>
+			  <option value="2_3">Zunehmen</option> 
 			</select>
 
 <h3>Trainingseinheiten pro Woche:</h3>
@@ -39,17 +46,23 @@
 		Bitte auswählen:
 
 			<select>
-			  <option value="3_1">vorwiegend liegend, z.B. Krankenhaus</option>
-			  <option value="3_2">vorwiegend sitzend, z.B. Bürojob</option>
-			  <option value="3_3">Mix aus sitzend / stehend, z.B. Barkeeper</option>
-			  <option value="3_4">Mix aus stehend / gehend, z.B. Hostess</option>
-			  <option value="3_5">sehr aktiv, z.B. Bauarbeiter</option>
-			  <option value="3_6">Mix aus sitzend / stehend, z.B. Barkeeper</option>
-			  <option value="3_7">Mix aus stehend / gehend, z.B. Hostess</option>
-			  <option value="3_8">sehr aktiv, z.B. Bauarbeiter</option>
+			  <option value="3_1">kein Training</option>
+			  <option value="3_2">1 Training</option>
+			  <option value="3_3">2 Trainings</option>
+			  <option value="3_4">3 Trainings</option>
+			  <option value="3_5">4 Trainings</option>
+			  <option value="3_6">5 Trainings</option>
+			  <option value="3_7">6 Trainings</option>
+			  <option value="3_8">7 Trainings</option>
 			</select>
 <br>
 <br>	
-	<button type="submit">Senden</button>
+	<button type="submit">Berechnen</button>
 </form>
+
+
+<h2>Hier siehst du deine berechneten Kalorien:</h2>
+
+<h3>Dein täglicher Kalorienbedarf:</h3>
+
 
