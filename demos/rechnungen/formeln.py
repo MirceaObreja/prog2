@@ -3,8 +3,19 @@ def kalorien_berechnen(alter):
     return neuer_preis
 
 
+def grundumsatz():
+	if geschlecht == m:
+		grundumsatz = (10 * int(gewicht)) + (6.25 * int(groesse)) - (5 * int(alter)) + 5 
+		kalorien_bedarf = grundumsatz * faktor_m
+	else:
+		grundumsatz = (10 * int(gewicht)) + (6.25 * int(groesse)) - (5 * int(alter)) - 161
+		kalorien_bedarf = grundumsatz * faktor_w
+	return kalorien_bedarf
 
 
-def grosser_rabatt_berechnen(preis):
-    neuer_preis = preis - (preis * 0.25)
-    return neuer_preis
+def kalorienbedarf():
+	if geschlecht == m:
+		kalorien_bedarf = grundumsatz * faktor_m
+	else:
+		kalorien_bedarf = grundumsatz * faktor_m
+	return kalorien_bedarf
