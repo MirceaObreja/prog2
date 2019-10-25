@@ -16,7 +16,7 @@
 <div class="container">
 <h1>Kalorienrechner</h1>
 
-<h4>Mein Kalorienrechner hilft dir deinen Tagesbedarf an Kalorien genau zu berechen.<h4>
+<h4>Der Kalorienrechner hilft dir deinen Tagesbedarf an Kalorien genau zu berechen.<h4>
 
 <br>
 <br>
@@ -24,39 +24,133 @@
 <p>Zudem kannst du auswählen ob du Gewicht verlieren, halten oder aufbauen möchtest. Zusätzlich werden dir die richtigen Produkte vorgeschlagen, welche dich bei deiner Zielsetzung unterstützen werden.</p>
 
 <form method="POST">
+
+	<!-- Erste Reihe -->
 <div class="row">
 <div class="center col-6">	
-<h3>Geschlecht:</h3>
 
-			<br>
-<form action="">
-  	<input type="radio" name="geschlecht" value="m"> Männlich<br>
- 	<input type="radio" name="geschlecht" value="f"> Weiblich<br>
-</form>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Geschlecht:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+			<form action="">
+			  	<input type="radio" name="geschlecht" value="m"> Männlich
+			 	<input type="radio" name="geschlecht" value="f"> Weiblich
+			</form>
+      </td>
+    </tr>
+  </tbody>
+</table>
 </div>
+
 <div class="center col-6">
-<h3>Alter:</h3>
 
-			<br>
-	<input type="number" name="alter" min=”1″ max=”100″ placeholder="Bitte gib dein Alter ein">
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Alter:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+			<form action="">
+			  	<input type="number" name="alter" value="alter" min=”1″ max=”100″ placeholder="Bitte gib dein Alter ein">
+			</form>
+      </td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </div>
+
+
+	<!-- Zweite Reihe -->
 <div class="row">
 <div class="center col-6">	
-<h3>Grösse in cm:</h3>
 
-			<br>
-	<input type="number" name="groesse" min=”40″ max=”250″ placeholder="Bitte gib deine Grösse in cm ein(z.B. 175)">
-</div>
-<div class="center col-6">	
-<h3>Gewicht in kg:</h3>
 
-			<br>
-	<input type="number" name="gewicht" min=”30″ max=”200″ placeholder="Bitte gib deine Grösse in cm ein(z.B. 175)">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Grösse in cm:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+			<form action="">
+			  	<input type="number" name="alter" value="alter" min=”1″ max=”100″ placeholder="Bitte gib dein Alter ein">
+			</form>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="center col-6">
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Gewicht in kg:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+			<form action="">
+			  	<input type="number" name="gewicht" min=”30″ max=”200″ placeholder="Bitte gib deine Grösse in cm ein(z.B. 175)">
+			</form>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 </div>
 </div>
+
+
+	<!-- Dritte Reihe -->
 <div class="row">
 <div class="center col-6">	
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Aktivitätslevel:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+			<form action="">
+			  	<p>Bitte auswählen:</p>
+			<br>
+			<select class="custom-select">
+			  <option value="1">vorwiegend liegend, z.B. Krankenhaus</option>
+			  <option value="2">vorwiegend sitzend, z.B. Bürojob</option>
+			  <option value="3">Mix aus sitzend / stehend, z.B. Barkeeper</option>
+			  <option value="4">Mix aus stehend / gehend, z.B. Hostess</option>
+			  <option value="5">sehr aktiv, z.B. Bauarbeiter</option>
+			</select>
+			</form>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
 <h3>Aktivitätslevel:</h3>
 
 		Bitte auswählen:
@@ -71,7 +165,7 @@
 			</select>
 
 
-			</div>
+</div>
 <div class="center col-6">	
 <h3>Ziel:</h3>
 
@@ -83,8 +177,10 @@
 			  <option value="2_2">Gewicht halten</option>
 			  <option value="2_3">Zunehmen</option> 
 			</select>
-			</div>
-		</div>
+</div>
+</div>
+
+
 <div class="center col-12">	
 <h3>Trainingseinheiten pro Woche:</h3>
 
@@ -128,6 +224,20 @@
 			</div>
 </div>			
 </div>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mark</td>
+      <td>Otto</td>
+    </tr>
+  </tbody>
+</table>
 </section>
 </body>
 </html> 
