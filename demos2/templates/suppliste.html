@@ -1,0 +1,24 @@
+{% extends "template.html" %}
+
+{% block title %}Supplement Liste{% endblock %}
+
+{% block main %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 mb-3">
+            <h1>Supplement Liste</h1>
+            <hr>
+        </div>
+        {% if telbuch %}
+            {% for key, value in telbuch.items() %}
+                <div class="col-12 mb-3">
+                    <h6>{{ value['name'] }}</h6>
+                    <p>{{ value['telefon']}}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+                <h3>Keine Einträge vorhanden</h3>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
