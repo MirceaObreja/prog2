@@ -23,9 +23,9 @@ def kal():
 @app.route("/search", methods=['GET', 'POST'])
 def search(name=None):
     if (request.method == 'POST'):
-        person_eintrag = suppliste.person_suchen(request.form)
-        print(person_eintrag)
-        return render_template("suppliste.html", telbuch=person_eintrag)
+        produkt_eintrag = suppliste.produkt_suchen(request.form)
+        print(produkt_eintrag)
+        return render_template("suppliste.html", telbuch=produkt_eintrag)
 
     return render_template("search.html")
 
