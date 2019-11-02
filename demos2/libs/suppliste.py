@@ -31,5 +31,9 @@ def produkt_suchen(form_request):
     if name in telefonbuch:
         return {name: telefonbuch[name]}
 
-    
+def eintrag_speichern_von_kalo(form_request):
+    print(form_request)
+    name = form_request.get('name')
+    phone = form_request.get('phone')
+    eintrag_speichern(name, phone)
 
