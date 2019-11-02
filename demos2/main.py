@@ -4,16 +4,16 @@ from flask import redirect
 from flask import request
 from flask import url_for
 
-from libs import telefonbuch
+from libs import suppliste
 
 app = Flask("Telefonbuch")
 
-@app.route("/")
 @app.route("/index")
 def index():
-    telbuchdaten = telefonbuch.telefonbuch_lesen()
-    return render_template("telefonbuch.html", telbuch=telbuchdaten)
+    telbuchdaten = suppliste.telefonbuch_lesen()
+    return render_template("suppliste.html", telbuch=telbuchdaten)
 
+@app.route("/")
 @app.route("/kal")
 def kal():
     return render_template("kalo.html")
@@ -23,16 +23,16 @@ def kal():
 @app.route("/search", methods=['GET', 'POST'])
 def search(name=None):
     if (request.method == 'POST'):
-        person_eintrag = telefonbuch.person_suchen(request.form)
+        person_eintrag = suppliste.person_suchen(request.form)
         print(person_eintrag)
-        return render_template("telefonbuch.html", telbuch=person_eintrag)
+        return render_template("suppliste.html", telbuch=person_eintrag)
 
     return render_template("search.html")
 
 @app.route("/add", methods=['GET', 'POST']) 
 def add():
     if (request.method == 'POST'):
-        telefonbuch.eintrag_speichern_von_formular(request.form)
+        suppliste.eintrag_speichern_von_formular(request.form)
         return redirect("/")
 
     return render_template("add.html")
