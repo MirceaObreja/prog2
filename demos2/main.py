@@ -13,11 +13,17 @@ def index():
     telbuchdaten = suppliste.telefonbuch_lesen()
     return render_template("suppliste.html", telbuch=telbuchdaten)
 
-@app.route("/")
-@app.route("/kal")
+@app.route("/" , methods=['GET', 'POST'])
+@app.route("/kal", methods=['GET', 'POST'])
 def kal():
     return render_template("kalo.html")
 
+def add():
+    if (request.method == 'POST'):
+        suppliste.eintrag_speichern_von_formular(request.form)
+        return redirect("/add")
+
+    return render_template("kalo.html")
 
 @app.route("/search/<name>")
 @app.route("/search", methods=['GET', 'POST'])
