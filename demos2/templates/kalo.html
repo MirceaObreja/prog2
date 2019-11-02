@@ -3,264 +3,28 @@
 {% block title %}Kalorienrechner{% endblock %}
 
 {% block main %}
-<section class="content">
-<div class="container">
-<h1>Kalorienrechner</h1>
-
-<h4>Der Kalorienrechner hilft dir deinen Tagesbedarf an Kalorien genau zu berechen.<h4>
-
-<br>
-<br>
-
-<p>Zudem kannst du auswählen ob du Gewicht verlieren, halten oder aufbauen möchtest. Zusätzlich werden dir die richtigen Produkte vorgeschlagen, welche dich bei deiner Zielsetzung unterstützen werden.</p>
-
-<form method="POST">
-
-    <!-- Erste Reihe -->
-<div class="row">
-<div class="center col-6">  
-
-
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Geschlecht:</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-            <form action="">
-                <input type="radio" name="geschlecht" value="m"> Männlich
-                <input type="radio" name="geschlecht" value="f"> Weiblich
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 mb-3">
+            <h1>Supplement hinzufügen</h1>
+            <hr>
+            <form method="POST">
+                <div class="form-group mt-3">
+                    <label for="name">Produkt</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Kalorien</label>
+                    <input type="text" class="form-control" name="phone">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Hinzufügen</button>
             </form>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="center col-6">
-
-
-
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Alter:</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-            <form action="">
-                <input type="number" name="alter" value="alter" min=”1″ max=”100″ placeholder="Bitte gib dein Alter ein">
-            </form>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-
-    <!-- Zweite Reihe -->
-<div class="row">
-<div class="center col-6">  
-
-
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Grösse in cm:</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-            <form action="">
-                <input type="number" name="alter" value="alter" min=”1″ max=”100″ placeholder="Bitte gib dein Alter ein">
-            </form>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="center col-6">
-
-
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Gewicht in kg:</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-            <form action="">
-                <input type="number" name="gewicht" min=”30″ max=”200″ placeholder="Bitte gib deine Grösse in cm ein(z.B. 175)">
-            </form>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-</div>
-</div>
-
-
-    <!-- Dritte Reihe -->
-<div class="row">
-<div class="center col-6">  
-
-
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Aktivitätslevel:</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-            <form action="">
-                <p>Bitte auswählen:</p>
-            <select class="custom-select">
-              <option value="1">vorwiegend liegend, z.B. Krankenhaus</option>
-              <option value="2">vorwiegend sitzend, z.B. Bürojob</option>
-              <option value="3">Mix aus sitzend / stehend, z.B. Barkeeper</option>
-              <option value="4">Mix aus stehend / gehend, z.B. Hostess</option>
-              <option value="5">sehr aktiv, z.B. Bauarbeiter</option>
-            </select>
-            </form>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-<div class="center col-6">  
-
-
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Ziel:</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-            <form action="">
-                <p>Bitte auswählen:</p>
-            <select class="custom-select">
-              <option value="2_1">Abnehmen</option>
-              <option value="2_2">Gewicht halten</option>
-              <option value="2_3">Zunehmen</option> 
-            </select>
-            </form>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-    <!-- Vierte Reihe -->
-<div class="center col-12"> 
-
-
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Trainingseinheiten pro Woche:</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-            <form action="">
-                <p>Bitte auswählen:</p>
-            <select class="custom-select">
-              <option value="3_1">kein Training</option>
-              <option value="3_2">1 Training</option>
-              <option value="3_3">2 Trainings</option>
-              <option value="3_4">3 Trainings</option>
-              <option value="3_5">4 Trainings</option>
-              <option value="3_6">5 Trainings</option>
-              <option value="3_7">6 Trainings</option>
-              <option value="3_8">7 Trainings</option>
-            </select>
-            </form>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-    <button type="submit" class="btn btn-info">Berechnen</button>   
-<br>
-<br>
-
+            {% if error %}
+                {{ error }}
+            {% endif %}
+        </div>
+        
     </div>
-</form>
-
-
-    <!-- Fünfte Reihe -->
-<div class="center col-12"> 
-
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Hier siehst du deine berechneten Kalorien:</th>
-    </tr>
-
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <p>Dein täglicher Kalorienbedarf:</p>
-      </td>
-           
-            
-    </tr>
-  </tbody>
-</table>
-            </div>
-
-    <!-- Fünfte Reihe -->
-
-<div class="center col-12"> 
-
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Makroverteilung:</th>
-    </tr>
-
-  </thead>
-  <tbody>
-
-    <tr>
-        <td>
-        <p>Protein:</p>
-        </td>
-</tr>
-<tr>
-        <td>
-        <p>Kohlenhydrate:</p>
-        </td>
-</tr>
-        <td>
-        <p>Fett:</p>
-        </td>
-  </tbody>
-</table>
-            </div>  
-</div>          
 </div>
 
-</section>
 {% endblock %}
