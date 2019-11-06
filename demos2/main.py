@@ -16,12 +16,9 @@ def index():
 @app.route("/" , methods=['GET', 'POST'])
 @app.route("/kal", methods=['GET', 'POST'])
 def kal():
-    return render_template("kalo.html")
-
-def add():
     if (request.method == 'POST'):
         suppliste.eintrag_speichern_von_formular(request.form)
-        return redirect("/add")
+        return redirect("/")
 
     return render_template("kalo.html")
 
