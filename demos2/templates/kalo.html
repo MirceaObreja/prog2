@@ -20,15 +20,18 @@
       <form method="POST">
 
 
+<!-- Erste Reihe -->
           <div class="row">
-            <div class="center col-12">  
-              <table class="table">
-                <label for="name">Name</label>
-                  <input type="text" class="form-control" id="name" name="name" required>
-              </table>
-            </div>
+              <div class="center col-12">  
+                <table class="table">
+                  <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </table>
+              </div>
           </div>
-        <!-- Erste Reihe -->
+
+
+<!-- Zweite Reihe -->
       <div class="row">
           <div class="center col-6">  
                 <table class="table">
@@ -58,7 +61,8 @@
                         <tbody>
                           <tr>
                             <td>
-                                <input type="number" name="alter" min=”1″ max=”100″ placeholder="Bitte gib dein Alter ein">
+                                <input type="number" class="form-control" name="alter" min=”1″ max=”100″ placeholder="Bitte gib dein Alter ein">
+
                             </td>
                           </tr>
                         </tbody>
@@ -66,14 +70,18 @@
           </div>
       </div>
 
-
+<!-- Berechnen Reihe -->
       <div class="text-center">
         <div class="center col-12">
           <button type="submit" class="btn btn-info">Berechnen</button> 
         </div>
       </div>
-
       </form>
+
+<!-- Ergenis Reihe -->
+      {% if ergebnis %}
+        {{ ergebnis }}
+      {% endif %}
   </div>
 </div>
 {% endblock %}
