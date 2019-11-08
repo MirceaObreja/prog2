@@ -3,73 +3,77 @@
 {% block title %}Kalorienrechner{% endblock %}
 
 {% block main %}
-<section class="content">
-<div class="container">
-<h1>Kalorienrechner</h1>
+<div class="container mt-5">
+  <section class="content">
+          <div class="container">
+            <h1>Kalorienrechner</h1>
+            <hr>
+              <div class="text-center">
+                <h5>Der Kalorienrechner hilft dir deinen Tagesbedarf an Kalorien genau zu berechen.<h5>
+                <br>
+                <br>
+                <p>Zudem kannst du auswählen ob du Gewicht verlieren, halten oder aufbauen möchtest. Zusätzlich werden dir die richtigen Produkte vorgeschlagen, welche dich bei deiner Zielsetzung unterstützen werden.</p>
+              </div>
+          </div>
+  </section>
+  <div class="container">
+      <form method="POST">
 
-<h4>Der Kalorienrechner hilft dir deinen Tagesbedarf an Kalorien genau zu berechen.<h4>
 
-<br>
-<br>
+          <div class="row">
+            <div class="center col-12">  
+              <table class="table">
+                <label for="name">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" required>
+              </table>
+            </div>
+          </div>
+        <!-- Erste Reihe -->
+      <div class="row">
+          <div class="center col-6">  
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Geschlecht:</th>
+                    </tr>
+                  </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <input type="radio" name="maennlich"> Männlich
+                              <input type="radio" name="weiblich"> Weiblich
+                            </td>
+                          </tr>
+                        </tbody>
+                </table>
+          </div>
 
-<p>Zudem kannst du auswählen ob du Gewicht verlieren, halten oder aufbauen möchtest. Zusätzlich werden dir die richtigen Produkte vorgeschlagen, welche dich bei deiner Zielsetzung unterstützen werden.</p>
+          <div class="center col-6">
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Alter:</th>
+                    </tr>
+                  </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                                <input type="number" name="alter" min=”1″ max=”100″ placeholder="Bitte gib dein Alter ein">
+                            </td>
+                          </tr>
+                        </tbody>
+                </table>
+          </div>
+      </div>
 
-<form method="POST">
 
+      <div class="text-center">
+        <div class="center col-12">
+          <button type="submit" class="btn btn-info">Berechnen</button> 
+        </div>
+      </div>
 
-<div class="row">
-<div class="center col-12">  
-
-
-<table class="table">
-  <label for="name">Name</label>
-    <input type="text" class="form-control" id="name" name="name" required>
+      </form>
+  </div>
 </div>
-  <!-- Erste Reihe -->
-<div class="row">
-<div class="center col-6">  
-
-
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Geschlecht:</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <input type="radio" name="maennlich"> Männlich
-        <input type="radio" name="weiblich"> Weiblich
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="center col-6">
-
-
-
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Alter:</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-          <input type="number" name="alter" min=”1″ max=”100″ placeholder="Bitte gib dein Alter ein">
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-  <button type="submit" class="btn btn-info">Berechnen</button> 
-</form>
-
-</section>
-
 {% endblock %}
