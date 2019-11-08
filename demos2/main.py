@@ -38,6 +38,10 @@ def search(name=None):
 
 @app.route("/search_per", methods=['GET', 'POST'])
 def search_per(name=None):
+    per_daten = suppliste.file_lesen('kalo.txt')
+    print(per_daten)
+    return render_template("personenliste.html", prod=per_daten)
+"""
     if (request.method == 'POST'):
         person_eintrag = suppliste.person_suchen(request.form)
         print(person_eintrag)
@@ -45,7 +49,7 @@ def search_per(name=None):
 
     return render_template("personenliste.html")
 
-
+"""
 @app.route("/add", methods=['GET', 'POST']) 
 def add():
     if (request.method == 'POST'):
