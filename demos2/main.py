@@ -1,16 +1,17 @@
+"""Diverse Importe"""
 from flask import Flask
 from flask import render_template
 from flask import redirect
 from flask import request
 from flask import url_for
 import os
-
 from libs import suppliste
 
 os.system("cls")
 
 app = Flask("Telefonbuch")
 
+"""Supplement Seite Seite"""
 @app.route("/")
 @app.route("/index")
 def index():
@@ -18,6 +19,7 @@ def index():
     print(prod_daten)
     return render_template("suppliste.html", prod=prod_daten)
 
+"""Person hinzufügen Seite"""
 @app.route("/kal", methods=['GET', 'POST'])
 def kal():
     if (request.method == 'POST'):
@@ -27,6 +29,7 @@ def kal():
 
     return render_template("kalo.html", ergebnis=False)
 
+"""Suchen Seite"""
 @app.route("/search", methods=['GET', 'POST'])
 def search(name=None):
     if (request.method == 'POST'):
@@ -39,29 +42,15 @@ def search(name=None):
             print(personen_eintrag)
             return render_template("personenliste.html", prod=personen_eintrag)
     return render_template("search.html")
-"""
-    else:
-        personen_eintrag = suppliste.person_suchen(request.form)
-        print(personen_eintrag)
-        return render_template("personenliste.html", prod=personen_eintrag)
-"""
-    
 
-
+"""Personen Seite"""
 @app.route("/search_per", methods=['GET', 'POST'])
 def search_per(name=None):
     per_daten = suppliste.file_lesen('kalo.txt')
     print(per_daten)
     return render_template("personenliste.html", prod=per_daten)
-"""
-    if (request.method == 'POST'):
-        person_eintrag = suppliste.person_suchen(request.form)
-        print(person_eintrag)
-        return render_template("personenliste.html", prod=person_eintrag)
 
-    return render_template("personenliste.html")
-
-"""
+"""Produkt hinzufügen Seite"""
 @app.route("/add", methods=['GET', 'POST']) 
 def add():
     if (request.method == 'POST'):
