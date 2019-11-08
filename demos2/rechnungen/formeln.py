@@ -3,8 +3,9 @@ def kalorien_berechnen(alter):
     return neuer_preis
 
 
-def grundumsatz():
-	if geschlecht == m:
+def grundumsatz(request):
+	geschlecht = request.form
+    if geschlecht == "m":
 		grundumsatz = (10 * int(gewicht)) + (6.25 * int(groesse)) - (5 * int(alter)) + 5 
 		kalorien_bedarf = grundumsatz * faktor_m
 	else:
@@ -20,7 +21,8 @@ def kalorienbedarf():
 		kalorien_bedarf = grundumsatz * faktor_m
 	return kalorien_bedarf
 
-def basic():
+def basic(request):
+	
 	if geschlecht_weiblich == "weiblich":
 		kalorien_bedarf = alter * 3
 	else:
