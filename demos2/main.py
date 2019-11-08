@@ -11,29 +11,41 @@ os.system("cls")
 
 app = Flask("Telefonbuch")
 
+@app.route("/")
 @app.route("/index")
 def index():
     prod_daten = suppliste.file_lesen('prod.txt')
     print(prod_daten)
     return render_template("suppliste.html", prod=prod_daten)
 
-@app.route("/" , methods=['GET', 'POST'])
 @app.route("/kal", methods=['GET', 'POST'])
 def kal():
     if (request.method == 'POST'):
         suppliste.eintrag_speichern_von_kalo(request.form)
-        return redirect("/")
+        ergebnis_dict = {"works": True}
+        return render_template("kalo.html", ergebnis=ergebnis_dict)
 
-    return render_template("kalo.html")
+    return render_template("kalo.html", ergebnis=False)
 
 @app.route("/search", methods=['GET', 'POST'])
 def search(name=None):
     if (request.method == 'POST'):
-        produkt_eintrag = suppliste.produkt_suchen(request.form)
-        print(produkt_eintrag)
-        return render_template("suppliste.html", prod=produkt_eintrag)
-
+        if request.form["submit"] == "supp":
+            produkt_eintrag = suppliste.produkt_suchen(request.form)
+            print(produkt_eintrag)
+            return render_template("suppliste.html", prod=produkt_eintrag)
+        elif request.form["submit"] == "pers":
+            personen_eintrag = suppliste.person_suchen(request.form)
+            print(personen_eintrag)
+            return render_template("personenliste.html", prod=personen_eintrag)
     return render_template("search.html")
+"""
+    else:
+        personen_eintrag = suppliste.person_suchen(request.form)
+        print(personen_eintrag)
+        return render_template("personenliste.html", prod=personen_eintrag)
+"""
+    
 
 
 @app.route("/search_per", methods=['GET', 'POST'])
