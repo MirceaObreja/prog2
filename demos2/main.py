@@ -6,6 +6,7 @@ from flask import request
 from flask import url_for
 import os
 from libs import suppliste
+from rechnungen import formeln
 
 os.system("cls")
 
@@ -22,10 +23,20 @@ def index():
 """Person hinzufügen Seite"""
 @app.route("/kal", methods=['GET', 'POST'])
 def kal():
-    if (request.method == 'POST'):
+    if request.method == 'POST':
         suppliste.eintrag_speichern_von_kalo(request.form)
-        ergebnis_dict = {"works": True}
-        return render_template("kalo.html", ergebnis=ergebnis_dict)
+        ergebnis_dict = request.form
+
+        weiblich = ergebnis_dict.get('weiblich')
+        alter = ergebnis_dict.get('alter')
+
+        if weiblich == 'on':
+            geschlecht = "w"
+        else:
+            geschlecht = "m"
+
+        kalorien = formeln.basic(geschlecht, alter)
+        return render_template("kalo.html", ergebnis=kalorien)
 
     return render_template("kalo.html", ergebnis=False)
 
