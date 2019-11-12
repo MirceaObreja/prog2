@@ -26,6 +26,8 @@ def eintrag_speichern_von_kalo(form_request):
     name = form_request.get('name')
     weiblich = form_request.get('weiblich')
     alter = form_request.get('alter')
+    groesse = form_request.get('groesse')
+    gewicht = form_request.get('gewicht')
 
     if weiblich == 'on':
         geschlecht = "w"
@@ -33,7 +35,7 @@ def eintrag_speichern_von_kalo(form_request):
         geschlecht = "m"
 
     kalo = file_lesen('kalo.txt')
-    kalo[name] = {"name": name, "alter": alter, "geschlecht": geschlecht}  
+    kalo[name] = {"name": name, "alter": alter, "geschlecht": geschlecht, "groesse": groesse, "gewicht": gewicht}  
     eintrag_speichern(kalo, 'kalo.txt')
 
 
