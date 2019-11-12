@@ -13,8 +13,10 @@
             {% for key, value in prod.items() %}
                 <div class="col-12 mb-3">
                     <h6>{{ key }}</h6>
+                    <p>Geschlecht: {{ value ["geschlecht"] }}</p>
                     <p>Alter: {{ value ["alter"] }}</p>
-                    <p>Geschlecht: {{ value ["geschlecht_weiblich"] }}</p>
+                    <p>Grösse: {{ value ["groesse"] }}</p>
+                    <p>Gewicht: {{ value ["gewicht"] }}</p>
 
                 </div>
             {% endfor %}
