@@ -21,14 +21,14 @@
 
 
 <!-- Erste Reihe -->
-          <div class="row">
-              <div class="center col-12">  
-                <table class="table">
-                  <label for="name">Name</label>
+      <div class="row">
+          <div class="center col-12">  
+            <table class="table">
+              <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" name="name" required>
-                </table>
-              </div>
+            </table>
           </div>
+      </div>
 
 
 <!-- Zweite Reihe -->
@@ -69,7 +69,48 @@
                 </table>
           </div>
       </div>
+<!-- Dritte Reihe -->
 
+      <div class="row">
+          <div class="center col-6">  
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Grösse in cm:</th>
+                    </tr>
+                  </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                            <form action="">
+                                <input type="number" class="form-control" name="groesse" min=”1″ max=”200″ placeholder="Bitte gib deine Grösse ein (z.B. 175)">
+                            </form>
+                            </td>
+                          </tr>
+                        </tbody>
+                </table>
+          </div>
+
+          <div class="center col-6">
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Gewicht in kg:</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                      <form action="">
+                          <input type="number" class="form-control" name="gewicht" min=”1″ max=”200″ placeholder="Bitte gib deine Grösse ein (z.B. 175)">
+                      </form>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+          </div>
+      </div>
 <!-- Berechnen Reihe -->
       <div class="text-center">
         <div class="center col-12">
@@ -78,7 +119,7 @@
       </div>
       </form>
 
-<!-- Ergenis Reihe -->
+<!-- Ergebnis Reihe -->
       {% if ergebnis %}
         {{ ergebnis }}
       {% endif %}
