@@ -10,16 +10,24 @@
             <hr>
         </div>
         {% if prod %}
-            {% for key, value in prod.items() %}
-                <div class="col-12 mb-3">
-                    <h6>{{ key }}</h6>
-                    <p>Geschlecht: {{ value ["geschlecht"] }}</p>
-                    <p>Alter: {{ value ["alter"] }}</p>
-                    <p>Grösse: {{ value ["groesse"] }}</p>
-                    <p>Gewicht: {{ value ["gewicht"] }}</p>
 
-                </div>
+                <div class="container">
+                  <div class="row">
+            {% for key, value in prod.items() %}
+                    <div class="col">                        
+                        <h6>{{ key }}</h6>
+                        <p>Geschlecht: {{ value ["geschlecht"] }}</p>
+                        <p>Alter: {{ value ["alter"] }}</p>
+                        <p>Grösse: {{ value ["groesse"] }}</p>
+                        <p>Gewicht: {{ value ["gewicht"] }}</p>
+                        <p>Aktivitätslevel: {{ value ["aktivitaet"] }}</p>
+                        <p>Ziel: {{ value ["ziel"] }}</p>
+                        <p>Trainingseinheiten pro Woche: {{ value ["training"] }}</p>
+                    </div>
             {% endfor %}
+            
+                  </div>
+                </div>
         {% else %}
                 <h3>Keine Einträge vorhanden</h3>
         {% endif %}
