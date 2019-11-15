@@ -46,7 +46,6 @@ def search(name=None):
     if (request.method == 'POST'):
         if request.form["submit"] == "supp":
             produkt_eintrag = suppliste.produkt_suchen(request.form)
-            print(produkt_eintrag)
             return render_template("suppliste.html", prod=produkt_eintrag)
         elif request.form["submit"] == "pers":
             personen_eintrag = suppliste.person_suchen(request.form)
