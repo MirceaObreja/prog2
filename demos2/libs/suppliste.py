@@ -7,8 +7,9 @@ def file_lesen(file_name):
             data = json.load(open_file)
     except:
         print("Error with file!")
-    finally:
-        return data
+        data = {}
+
+    return data
 
 def eintrag_speichern(data, file_name):
     with open(file_name, "w", encoding="utf-8") as open_file:
@@ -28,6 +29,9 @@ def eintrag_speichern_von_kalo(form_request):
     alter = form_request.get('alter')
     groesse = form_request.get('groesse')
     gewicht = form_request.get('gewicht')
+    aktivitaet = form_request.get('aktivitaet')
+    ziel = form_request.get('ziel')
+    training = form_request.get('training')
 
     if weiblich == 'on':
         geschlecht = "w"
@@ -35,7 +39,7 @@ def eintrag_speichern_von_kalo(form_request):
         geschlecht = "m"
 
     kalo = file_lesen('kalo.txt')
-    kalo[name] = {"name": name, "alter": alter, "geschlecht": geschlecht, "groesse": groesse, "gewicht": gewicht}  
+    kalo[name] = {"name": name, "alter": alter, "geschlecht": geschlecht, "groesse": groesse, "gewicht": gewicht, "aktivitaet": aktivitaet, "ziel": ziel,"training": training}  
     eintrag_speichern(kalo, 'kalo.txt')
 
 
