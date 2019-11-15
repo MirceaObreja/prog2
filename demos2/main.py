@@ -24,18 +24,24 @@ def index():
 @app.route("/kal", methods=['GET', 'POST'])
 def kal():
     if request.method == 'POST':
-        suppliste.eintrag_speichern_von_kalo(request.form)
         ergebnis_dict = request.form
 
         weiblich = ergebnis_dict.get('weiblich')
         alter = ergebnis_dict.get('alter')
+        groesse = ergebnis_dict.get('groesse')
+        gewicht = ergebnis_dict.get('gewicht')
+        aktivitaet = ergebnis_dict.get('aktivitaet')
+        ziel = ergebnis_dict.get('ziel')
+        training = ergebnis_dict.get('training')
+        
 
         if weiblich == 'on':
             geschlecht = "w"
         else:
             geschlecht = "m"
 
-        kalorien = formeln.basic(geschlecht, alter)
+        kalorien = formeln.basic(geschlecht, alter, groesse, gewicht, aktivitaet, ziel, training)
+        suppliste.eintrag_speichern_von_kalo(request.form, kalorien)
         return render_template("kalo.html", ergebnis=kalorien)
 
     return render_template("kalo.html", ergebnis=False)
