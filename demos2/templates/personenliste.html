@@ -14,7 +14,7 @@
                 <div class="container">
                   <div class="row">
             {% for key, value in prod.items() %}
-                    <div class="col">                        
+                    <div class="col-6">                        
                         <h6>{{ key }}</h6>
                         <p>Geschlecht: {{ value ["geschlecht"] }}</p>
                         <p>Alter: {{ value ["alter"] }}</p>
@@ -23,9 +23,14 @@
                         <p>Aktivitätslevel: {{ value ["aktivitaet"] }}</p>
                         <p>Ziel: {{ value ["ziel"] }}</p>
                         <p>Trainingseinheiten pro Woche: {{ value ["training"] }}</p>
+                        <p>Errechnete Kalorien: {{ value ["kalorien"] }}</p> 
+                          <br>
+                    <br>
                     </div>
+                  
+
             {% endfor %}
-            
+
                   </div>
                 </div>
         {% else %}
