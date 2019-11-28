@@ -18,7 +18,9 @@ app = Flask("Telefonbuch")
 def index():
     prod_daten = suppliste.file_lesen('prod.txt')
     print(prod_daten)
-    return render_template("suppliste.html", prod=prod_daten)
+    leb_daten = suppliste.file_lesen('leb.txt')
+    print(leb_daten)
+    return render_template("suppliste.html", prod=prod_daten, leb=leb_daten)
 
 """Person hinzufügen Seite"""
 @app.route("/kal", methods=['GET', 'POST'])
@@ -40,11 +42,32 @@ def kal():
         else:
             geschlecht = "m"
 
+        if ziel == '0.85':
+            start = 0
+            end = 150
+        elif ziel == '1':
+            start = 150
+            end = 200
+        else:
+            start = 200
+            end = 99999
+
         kalorien = formeln.basic(geschlecht, alter, groesse, gewicht, aktivitaet, ziel, training)
         suppliste.eintrag_speichern_von_kalo(request.form, kalorien)
-        return render_template("kalo.html", ergebnis=kalorien)
+        return render_template("kalo.html", ergebnis=kalorien, suppliste=between_two_values(suppliste.file_lesen('prod.txt'), start, end), lebliste=between_two_values(suppliste.file_lesen('leb.txt'), start, end))
 
     return render_template("kalo.html", ergebnis=False)
+
+
+
+def between_two_values(dictionary, start, end):
+    matches = {}
+    for key, value in dictionary.items():
+        if start <= int(value) <= end:
+             matches[key]=value
+    return matches
+
+
 
 """Suchen Seite"""
 @app.route("/search", methods=['GET', 'POST'])
@@ -57,6 +80,10 @@ def search(name=None):
             personen_eintrag = suppliste.person_suchen(request.form)
             print(personen_eintrag)
             return render_template("personenliste.html", prod=personen_eintrag)
+        elif request.form["submit"] == "leben":
+            lebensmittel_eintrag = suppliste.lebensmittel_suchen(request.form)
+            print(lebensmittel_eintrag)
+            return render_template("suppliste.html", leb=lebensmittel_eintrag)
     return render_template("search.html")
 
 """Personen Seite"""
@@ -70,8 +97,11 @@ def search_per(name=None):
 @app.route("/add", methods=['GET', 'POST']) 
 def add():
     if (request.method == 'POST'):
-        suppliste.eintrag_speichern_von_prod(request.form)
-        return redirect("/")
+        if request.form['action'] == 'add_supp':
+            suppliste.eintrag_speichern_von_prod(request.form)
+        elif request.form['action'] == 'add_leb':
+            suppliste.eintrag_speichern_von_leb(request.form)
+        return redirect("/add")
 
     return render_template("add.html")
 
