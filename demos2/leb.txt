@@ -1,0 +1,1 @@
+{"Reis": "104", "Spaghetti": "350", "Apfel": "52", "Banane": "89", "H\u00e4hnchenbrust": "75", "Rinder Steak": "107", "Pute": "170", "Schweineschnitzel": "210", "Lachs": "142", "Forelle": "150", "Mais": "108", "Kartoffel": "86", "Gurke": "15", "Spinat": "23", "Mozzarella": "300", "Cashewkerne": "553"}
