@@ -16,13 +16,54 @@
             {% for key, value in prod.items() %}
                     <div class="col-6">                        
                         <h6>{{ key }}</h6>
-                        <p>Geschlecht: {{ value ["geschlecht"] }}</p>
+                        <p>Geschlecht: {% if value["geschlecht"] == 'm' %} männlich {% else %} weiblich {% endif %} </p>
                         <p>Alter: {{ value ["alter"] }}</p>
                         <p>Grösse: {{ value ["groesse"] }} cm</p>
                         <p>Gewicht: {{ value ["gewicht"] }} kg</p>
-                        <p>Aktivitätslevel: {{ value ["aktivitaet"] }}</p>
-                        <p>Ziel: {{ value ["ziel"] }}</p>
-                        <p>Trainingseinheiten: {{ value ["training"] }}  pro Woche</p>
+                        <p>Aktivitätslevel: 
+                            {% if value["aktivitaet"] == '1.2' %}
+                                vorwiegend liegend
+                            {% elif value["aktivitaet"] == '1.45' %}
+                                vorwiegend sitzend
+                            {% elif value["aktivitaet"] == '1.65' %}
+                                Mix aus sitzend
+                            {% elif value["aktivitaet"] == '1.85' %}
+                                Mix aus stehend
+                            {% elif value["aktivitaet"] == '2.2' %}
+                                sehr aktiv
+                            {% else %}
+                                keine Angabe
+                            {% endif %}</p>
+                        <p>Ziel:
+                            {% if value["ziel"] == '0.85' %}
+                                Abnehemen
+                            {% elif value["ziel"] == '1' %}
+                                Gewicht halten
+                            {% elif value["ziel"] == '1.15' %}
+                                Zunehmen
+                            {% else %}
+                                keine Angabe
+                            {% endif %}</p>
+                        <p>Trainingseinheiten:
+                            {% if value["training"] == '0' %}
+                                kein Training
+                            {% elif value["training"] == '50' %}
+                                1 mal pro Woche
+                            {% elif value["training"] == '100' %}
+                                2 mal pro Woche
+                            {% elif value["training"] == '150' %}
+                                3 mal pro Woche
+                            {% elif value["training"] == '200' %}
+                                4 mal pro Woche
+                            {% elif value["training"] == '250' %}
+                                5 mal pro Woche
+                            {% elif value["training"] == '300' %}
+                                6 mal pro Woche
+                            {% elif value["training"] == '350' %}
+                                7 mal pro Woche
+                            {% else %}
+                                keine Angabe
+                            {% endif %}</p>
                         <p>Errechnete Kalorien: {{ value ["kalorien"] }} kcal</p> 
                           <br>
                     <br>
