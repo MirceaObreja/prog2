@@ -1,1 +1,1 @@
-{"Koffein": "16", "Gr\u00fcner Tee Kapseln": "5"}
+{"Koffein": "16", "Gr\u00fcner Tee Kapseln": "5", "Weight Gainer": "388", "Extreme Gainer": "402", "Cereal Bar": "301", "Oats and Whey Bar": "368", "Yohimbine HCL": "10", "Multivitamin": "4", "Zuckerfreier Sirup": "5", "Vitamin C": "3", "Protein Waffeln": "466", "Zero Brotaufstrich": "4"}
