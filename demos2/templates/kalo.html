@@ -195,7 +195,7 @@
       {% if ergebnis %}
             <div class="container">
               <div class="row justify-content-center">
-                <div class="col-6">
+                <div class="col-8">
                   <table class="table">
                   <thead class="thead-dark">
                     <tr>
@@ -209,7 +209,56 @@
                         </td>
                       </tr>
                     </tbody>
-                  </table>
+                </table>
+
+                  <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Supplemente:</th>
+                    </tr>
+                  </thead>
+                    <tbody>
+                      {% if suppliste %}
+                        {% for key, value in suppliste.items() %}
+                          <tr>
+                            <td>
+                              <h6>{{ key }}</h6>
+                              <p>hat {{ value }} Kalorien auf 100 g </p>
+                            </td>
+                          </tr>
+                        {% endfor %}
+                        {% else %}
+                         <tr>
+                           <td>Keine Einträge</td>
+                         </tr>
+                         {% endif %}
+                    </tbody>
+                </table>
+
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Lebensmittel:</th>
+                    </tr>
+                  </thead>
+                    <tbody>
+                      {% if lebliste %}
+                        {% for key, value in lebliste.items() %}
+
+                          <tr>
+                            <td>
+                              <h6>{{ key }}</h6>
+                              <p>hat {{ value }} Kalorien auf 100 g </p>
+                            </td>
+                          </tr>
+                        {% endfor %}
+                        {% else %}
+                         <tr>
+                           <td>Keine Einträge</td>
+                         </tr>
+                         {% endif %}
+                    </tbody>
+                </table>
                 </div>
               </div>
             </div>
