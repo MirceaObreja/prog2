@@ -10,7 +10,7 @@ from rechnungen import formeln
 
 os.system("cls")
 
-app = Flask("Telefonbuch")
+app = Flask("HealthCoach")
 
 """Supplement Seite Seite"""
 @app.route("/")
@@ -44,9 +44,9 @@ def kal():
 
         if ziel == '0.85':
             start = 0
-            end = 150
+            end = 100
         elif ziel == '1':
-            start = 150
+            start = 100
             end = 200
         else:
             start = 200
