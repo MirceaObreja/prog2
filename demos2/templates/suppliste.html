@@ -1,6 +1,6 @@
 {% extends "template.html" %}
 
-{% block title %}Supplements{% endblock %}
+{% block title %}Liste der Supplements und Lebensmittel{% endblock %}
 
 {% block main %}
 <div class="container mt-5">
@@ -23,6 +23,34 @@
 
                   </div>
                 </div>
+
+        {% else %}
+                        <h3>Keine Einträge vorhanden</h3>
+        {% endif %}
+
+        <div class="col-12 mb-3">
+            <br>
+<br>
+
+            <h1>Lebensmittel</h1>
+            <hr>
+        </div>
+
+        {% if leb %}
+                <div class="container">
+                  <div class="row">
+            {% for key, value in leb.items() %}
+                        <div class="col-6">
+                            <h6>{{ key }}</h6>
+                            <p>hat {{ value }} Kalorien auf 100 g </p>
+                        </div>
+                  
+
+            {% endfor %}
+
+                  </div>
+                </div>
+
         {% else %}
                 <h3>Keine Einträge vorhanden</h3>
         {% endif %}
