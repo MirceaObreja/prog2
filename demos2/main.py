@@ -36,12 +36,13 @@ def kal():
         ziel = ergebnis_dict.get('ziel')
         training = ergebnis_dict.get('training')
         
-
+        """unterscheidung männlich weiblich"""
         if weiblich == 'on':
             geschlecht = "w"
         else:
             geschlecht = "m"
 
+        """differenzierung bei der Ziel Wahl"""
         if ziel == '0.85':
             start = 0
             end = 100
@@ -58,16 +59,13 @@ def kal():
 
     return render_template("kalo.html", ergebnis=False)
 
-
-
+"""Ausgabe der verschiedenen Einträge in den Dictionarys"""
 def between_two_values(dictionary, start, end):
     matches = {}
     for key, value in dictionary.items():
         if start <= int(value) <= end:
              matches[key]=value
     return matches
-
-
 
 """Suchen Seite"""
 @app.route("/search", methods=['GET', 'POST'])
@@ -104,8 +102,6 @@ def add():
         return redirect("/add")
 
     return render_template("add.html")
-
-
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
