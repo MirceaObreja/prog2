@@ -205,7 +205,8 @@
                     <tbody>
                       <tr>
                         <td>
-                          <p>Dein täglicher Kalorienbedarf: {{ ergebnis }}</p>
+  <!-- Ergebnis Kalorien -->
+                          <p>Dein täglicher Kalorienbedarf: {{ ergebnis }} kcal</p>
                         </td>
                       </tr>
                     </tbody>
@@ -214,6 +215,7 @@
                   <table class="table">
                   <thead class="thead-dark">
                     <tr>
+  <!-- Ergebnis Supplements -->
                       <th scope="col">Supplemente:</th>
                     </tr>
                   </thead>
@@ -234,10 +236,11 @@
                          {% endif %}
                     </tbody>
                 </table>
-
+  <!-- Ergebnis Lebensmittel -->
                 <table class="table">
                   <thead class="thead-dark">
                     <tr>
+
                       <th scope="col">Lebensmittel:</th>
                     </tr>
                   </thead>
@@ -254,6 +257,7 @@
                         {% endfor %}
                         {% else %}
                          <tr>
+  <!-- Ergebnis wenn keine Einträge -->
                            <td>Keine Einträge</td>
                          </tr>
                          {% endif %}
