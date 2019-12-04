@@ -4,8 +4,8 @@
 
 {% block main %}
 <div class="container mt-5">
-    <div class="row">
-        <div class="col-12 mb-3">
+    <div class="row justify-content-md-center">
+        <div class="col-8 mb-3">
             <h1>Supplement hinzufügen</h1>
             <hr>
             <form method="POST">
@@ -17,7 +17,7 @@
                     <label for="phone">Kalorien auf 100 g</label>
                     <input type="text" class="form-control" name="cal" required>
                   </div>
-                  <button type="submit" class="btn btn-primary" name="action" value="add_supp">Hinzufügen</button>
+                  <button type="submit" class="btn btn-info" name="action" value="add_supp">Hinzufügen</button>
             </form>
             <br>
 
@@ -32,7 +32,7 @@
                     <label for="phone">Kalorien auf 100 g</label>
                     <input type="text" class="form-control" name="cal_leb" required>
                     </div>
-                  <button type="submit" class="btn btn-primary" name="action" value="add_leb">Hinzufügen</button>
+                  <button type="submit" class="btn btn-info" name="action" value="add_leb">Hinzufügen</button>
             </form>
             {% if error %}
                 {{ error }}
