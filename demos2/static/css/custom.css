@@ -7,6 +7,15 @@ main {
   padding-bottom: 7rem;    /* Footer height */
 }
 
+.thead-dark th{
+  background-color: #17a2b8 !important;
+  border: none !important;
+}
+
+.navbar-nav {
+  position: absolute !important;
+  right: 10px !important;
+}
 footer {
   position: absolute;
   bottom: 0;
