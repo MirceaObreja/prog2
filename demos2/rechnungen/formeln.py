@@ -1,8 +1,12 @@
+"""zuerst die einzelnen Formeln beschrieben und dann ganz unten in einer Formel zusammengeführt """
+
 def kalorien_berechnen(alter):
     neuer_preis = alter - (alter * 0.1)
     return neuer_preis
 
 
+
+"""Formel aufgeteilt für den Grundumsatz"""
 def grundumsatz(request):
     if geschlecht == "m":
     	grundumsatz = (10 * int(gewicht)) + (6.25 * int(groesse)) - (5 * int(alter)) + 5 
@@ -13,6 +17,8 @@ def grundumsatz(request):
     	return kalorien_bedarf
 
 
+
+"""Formel für den Kalorienbedarf"""
 def kalorienbedarf():
 	if geschlecht == m:
 		kalorien_bedarf = grundumsatz * faktor_m
@@ -20,6 +26,8 @@ def kalorienbedarf():
 		kalorien_bedarf = grundumsatz * faktor_m
 	return kalorien_bedarf
 
+
+"""Formel für den Kaloriennedarf zusammen gefügt"""
 def basic(geschlecht, alter, groesse, gewicht, aktivitaet, ziel, training):
 	alter = int(alter)
 	groesse = int(groesse)
