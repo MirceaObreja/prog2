@@ -1,1 +1,0 @@
-{"peter": {"name": "peter", "telefon": "12341234"}, "test": {"name": "test", "telefon": "1234"}, "null": {"name": null, "telefon": null}, "elia": {"name": "elia", "telefon": "234324"}, "firtz": {"name": "firtz", "telefon": "324324"}, "": {"name": "", "telefon": ""}, "hallo": {"name": "hallo", "telefon": "12"}}
