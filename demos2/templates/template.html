@@ -12,15 +12,21 @@
 
     <script src="https://kit.fontawesome.com/187e24252e.js" crossorigin="anonymous"></script>
 
+
+        <!-- Seiten Vorlage welche überall genutzt wird hier variert der Titel der Seite -->
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
     <div id="page-container">
+
+        <!-- Hier wird der Content der jeweiligen Seite geladen -->
         {% include "navigation_template.html" %}
         <main>
             {% block main %}{% endblock %}
         </main>
 
+        
+        <!-- Footer der Seite -->
         <footer class="text-center">
             <br>
             <p>Made by M. Obreja</p>
